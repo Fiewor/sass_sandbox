@@ -1,0 +1,21 @@
+// function returns something if you use the 'return' keyword
+// mixin is basically a set of styles that you want to include
+
+// Set Text Color
+@function set-text-color($color) {
+    // conditional to test the lightness of a color
+    // if it's greater than 50, return a light colour, otherwise, return a dark colour
+    @if(lightness($color) > 50) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+// use a mixin when you have a block of styles that you don't want to keep repeating in your sass
+// Transform Mixin
+@mixin transform($property) {
+    --webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
